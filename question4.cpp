@@ -60,6 +60,14 @@ int tell_average(vector<int> array, int n)
     return average;
 }
 
+int show(vector<int> array, int n)
+{
+    for(int i = 0; i<n; i++)
+    {
+        cout<<array[i]<<" : "<<&array[i]<<endl;
+    }
+}
+
 int main()
 {
     int n, ch;
@@ -83,6 +91,7 @@ What do you want to do now?
 Enter 1 for maximum.
 Enter 2 for minimum.
 Enter 3 for average.
+Enter 4 to display address of each element.
 Enter 5 to end program.)";
 
     cin >> ch;
@@ -93,23 +102,29 @@ Enter 5 to end program.)";
             cout<<R"(
 -----------------------------------------
 Mazimum in the array is )"<<max;
-            continue;
+continue;
 }
         case 2:{
             int min = tell_min(array, n);
             cout<<R"(
 -----------------------------------------
 Minimum in the array is )"<<min;
-            continue;
+continue;
 }
         case 3:{
             int average = tell_average(array, n);
             cout<<R"(
 -----------------------------------------
 Average of the array is )"<<average;
-            continue;
+continue;
 }
         case 4:{
+            cout<<R"(
+-----------------------------------------)";
+            show(array, n);
+            continue;
+        }
+        case 5:{
         flag = false;
         continue;
 }    }
