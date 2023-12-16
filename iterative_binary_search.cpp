@@ -1,13 +1,20 @@
 // searching an element using binary search
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main()
 {
-    int i, ele, n, mid, start, end;
-    cout<<"Enter the number of elements in the array: ";
-    cin>>n;
-    int arr[n];
+    int i, ele, n, mid, start, end, input; /* declaring an array. */
+    vector<int> arr;
+
+    // storing values in array
+    cout << "Enter values of array:" << endl;
+    for (i = 0; i < n; i++)
+    {
+        cin >> input;
+        arr.push_back(input);
+    }
 
     for(i = 0; i < n; i++)
     {
