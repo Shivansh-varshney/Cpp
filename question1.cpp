@@ -2,8 +2,16 @@
 // s = 1 - (2^n) + (3^n) - (4^n) ..... upto n
 
 #include <iostream>
-#include <cmath>
 using namespace std;
+
+int power(int number, int raisedto)
+{
+    if(raisedto == 1)
+    {
+        return number;
+    }
+    return number * power(number, raisedto = raisedto - 1);
+}
 
 int main()
 {
@@ -18,11 +26,11 @@ int main()
     {
         if(i%2 == 0)
         {
-            s = s - pow(i, n);
+            s = s - power(i, n);
         }
         else
         {
-            s = s + pow(i, n);
+            s = s + power(i, n);
         }
     }
 

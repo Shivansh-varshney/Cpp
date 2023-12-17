@@ -1,47 +1,49 @@
 // calculate factors using default arguements.
 
 #include <iostream>
-#include <vector>
 using namespace std;
 
-vector<int> factors(int number, int upperlimit = -1)
+bool factors(int number, int i = 1)
 {
-    // vector<int> is to store all the factors
-    vector<int> factors;
-
     if(number<=0)
     {
         cout<<"Please enter a valid number!!";
-        return factors;
+        return true;
     }
 
-    if(upperlimit = -1)
-    {
-        upperlimit = number;
-    }
-
-    for(int i = 1; i<=upperlimit; i++)
+    for(i; i<=number; i++)
     {
         if(number % i == 0)
         {
-            factors.push_back(i);
+            if(i==number)
+            {
+                cout<<i;
+            }
+            else
+            {
+                cout<<i<<", ";
+            }
         }
     }
-
-    return factors;
+    return true;
 }
 
 int main()
 {
-    int n;
-    cout<<"Enter the number you want factors of: ";
-    cin>>n;
-
-    vector<int> result = factors(n);
-    
-    cout<<"All the factors of "<<n<<" are: ";
-    for(int factor : result)
+    bool flag = true;
+    while(flag == true)
     {
-        cout<< factor <<" ";
+        int n;
+        cout<<"Enter the number you want factors of or enter -1 to end program: ";
+        cin>>n;
+
+        if(n == -1)
+        {
+            flag = false;
+        }
+        else
+        {
+            flag = factors(n);
+        }
     }
 }
