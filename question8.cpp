@@ -1,26 +1,27 @@
 #include <iostream>
 #include <fstream>
+using namespace std;
 
 int main() {
     // Input and output file names
-    std::string inputFileName = "input.txt";
-    std::string outputFileName = "output.txt";
+    string inputFileName = "input.txt";
+    string outputFileName = "output.txt";
 
     // Open the input file
-    std::ifstream inputFile(inputFileName);
+    ifstream inputFile(inputFileName);
 
     // Check if the input file is open
     if (!inputFile.is_open()) {
-        std::cerr << "Error opening input file: " << inputFileName << std::endl;
+        cerr << "Error opening input file: " << inputFileName << endl;
         return 1; // Return error code
     }
 
     // Open the output file
-    std::ofstream outputFile(outputFileName);
+    ofstream outputFile(outputFileName);
 
     // Check if the output file is open
     if (!outputFile.is_open()) {
-        std::cerr << "Error opening output file: " << outputFileName << std::endl;
+        cerr << "Error opening output file: " << outputFileName << endl;
         inputFile.close(); // Close the input file
         return 1; // Return error code
     }
@@ -40,7 +41,7 @@ int main() {
     outputFile.close();
 
     // Display the number of characters copied
-    std::cout << "Number of characters copied: " << charactersCopied << std::endl;
+    cout << "Number of characters copied: " << charactersCopied << endl;
 
     return 0;
 }
